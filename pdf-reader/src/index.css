@@ -1,0 +1,222 @@
+:root {
+  color-scheme: dark;
+  --bg-deep: #06070b;
+  --bg: #0b111e;
+  --surface: rgba(22, 25, 35, 0.72);
+  --surface-solid: #161923;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --text: #f2f4f8;
+  --text-secondary: rgba(242, 244, 248, 0.72);
+  --muted: #8b92a8;
+  --accent: #6ea8fe;
+  --accent-dim: rgba(110, 168, 254, 0.15);
+  --accent-glow: rgba(110, 168, 254, 0.35);
+  --danger-bg: rgba(255, 80, 100, 0.12);
+  --danger-border: rgba(255, 100, 120, 0.35);
+  --danger-text: #ffb4be;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.55);
+  --glass-splash-bg: rgba(6, 7, 11, 0.52);
+  --glass-splash-border: rgba(15, 21, 38, 0.65);
+  --glass-splash-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset, 0 28px 80px rgba(0, 0, 0, 0.55);
+  --btn-cta-bg: linear-gradient(135deg, #0f1526 0%, #162238 48%, #0b111e 100%);
+  --btn-cta-color: #e8eaef;
+  --btn-cta-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
+  --nav-rail-bg: rgba(22, 25, 35, 0.78);
+  --nav-rail-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset, 0 18px 48px rgba(0, 0, 0, 0.5);
+  --dock-bg: rgba(18, 20, 28, 0.88);
+  --dock-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  --dock-topbar-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  --field-inset: rgba(0, 0, 0, 0.22);
+  --field-inset-dock: rgba(0, 0, 0, 0.35);
+  --ghost-btn-bg: rgba(255, 255, 255, 0.04);
+  --ghost-btn-hover: rgba(255, 255, 255, 0.08);
+  --fab-bg: linear-gradient(145deg, #8ab8ff 0%, #6ea8fe 42%, #5c96f0 100%);
+  --fab-color: #0a0d14;
+  --fab-shadow: 0 4px 20px rgba(110, 168, 254, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.22) inset;
+  --settings-overlay-bg: rgba(6, 7, 11, 0.52);
+  --tab-bg: rgba(0, 0, 0, 0.22);
+  --tab-active-bg: rgba(110, 168, 254, 0.14);
+  --tab-active-border: rgba(110, 168, 254, 0.4);
+  --recent-row-bg: rgba(255, 255, 255, 0.03);
+  --recent-row-hover-border: rgba(255, 255, 255, 0.12);
+  --recent-row-hover-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  --drop-overlay-bg: rgba(8, 9, 13, 0.55);
+  --drop-box-bg: rgba(22, 25, 35, 0.92);
+  --drop-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06) inset, 0 24px 64px rgba(0, 0, 0, 0.5);
+  --doc-topbar-bg: rgba(8, 10, 16, 0.38);
+  --doc-topbar-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06) inset, 0 18px 48px rgba(0, 0, 0, 0.42);
+  --toast-bg: rgba(110, 168, 254, 0.12);
+  --toast-border: rgba(110, 168, 254, 0.35);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.14);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.22);
+  --pdf-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), 0 24px 64px rgba(0, 0, 0, 0.45);
+  --pdf-outline: 1px solid rgba(255, 255, 255, 0.06);
+  --primary-btn-bg: linear-gradient(135deg, #7ab0ff 0%, #6ea8fe 50%, #5c9cf9 100%);
+  --primary-btn-color: #0a0d14;
+  --primary-btn-shadow: 0 2px 12px rgba(110, 168, 254, 0.25);
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  /* Как у системных листов / баров Apple: пружина на появление, ускорение на скрытие */
+  --ease-apple-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-apple-spring: cubic-bezier(0.34, 1.22, 0.32, 1);
+  --ease-apple-in: cubic-bezier(0.55, 0, 0.82, 0.35);
+  --apple-reveal-duration: 0.55s;
+  --apple-dismiss-duration: 0.38s;
+  --motion-duration: 0.42s;
+  --motion-duration-fast: 0.2s;
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+.liquid-gradient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+body {
+  color: var(--text);
+  background-color: var(--bg-deep);
+  -webkit-font-smoothing: antialiased;
+}
+
+input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ——— Светлая тема: бело-небесная палитра ——— */
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg-deep: #f7fbff;
+  --bg: #edf4fc;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-solid: #ffffff;
+  --border: rgba(100, 149, 199, 0.2);
+  --border-strong: rgba(71, 133, 190, 0.32);
+  --text: #0f2744;
+  --text-secondary: rgba(15, 39, 68, 0.74);
+  --muted: #5b7a9e;
+  --accent: #0284c7;
+  --accent-dim: rgba(2, 132, 199, 0.14);
+  --accent-glow: rgba(56, 189, 248, 0.38);
+  --danger-bg: rgba(220, 38, 38, 0.1);
+  --danger-border: rgba(220, 38, 38, 0.28);
+  --danger-text: #b91c1c;
+  --shadow-lg: 0 24px 64px rgba(120, 160, 200, 0.16);
+  --glass-splash-bg: rgba(255, 255, 255, 0.9);
+  --glass-splash-border: rgba(100, 149, 199, 0.32);
+  --glass-splash-shadow: 0 0 0 1px rgba(255, 255, 255, 0.95) inset, 0 24px 64px rgba(120, 160, 200, 0.18);
+  --btn-cta-bg: linear-gradient(135deg, #38bdf8 0%, #0284c7 52%, #0369a1 100%);
+  --btn-cta-color: #ffffff;
+  --btn-cta-shadow: 0 6px 24px rgba(2, 132, 199, 0.28);
+  --nav-rail-bg: rgba(255, 255, 255, 0.94);
+  --nav-rail-shadow: 0 0 0 1px rgba(186, 230, 253, 0.65) inset, 0 18px 48px rgba(120, 160, 200, 0.16);
+  --dock-bg: rgba(255, 255, 255, 0.94);
+  --dock-shadow: 0 8px 32px rgba(120, 160, 200, 0.14), 0 0 0 1px rgba(186, 230, 253, 0.55) inset;
+  --dock-topbar-shadow: 0 4px 20px rgba(120, 160, 200, 0.12), 0 0 0 1px rgba(186, 230, 253, 0.5) inset;
+  --field-inset: rgba(255, 255, 255, 0.85);
+  --field-inset-dock: rgba(237, 244, 252, 0.95);
+  --ghost-btn-bg: rgba(2, 132, 199, 0.08);
+  --ghost-btn-hover: rgba(2, 132, 199, 0.14);
+  --fab-bg: linear-gradient(145deg, #7dd3fc 0%, #38bdf8 42%, #0ea5e9 100%);
+  --fab-color: #ffffff;
+  --fab-shadow: 0 4px 20px rgba(14, 165, 233, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  --settings-overlay-bg: rgba(247, 251, 255, 0.82);
+  --tab-bg: rgba(237, 244, 252, 0.9);
+  --tab-active-bg: rgba(2, 132, 199, 0.12);
+  --tab-active-border: rgba(2, 132, 199, 0.35);
+  --recent-row-bg: rgba(237, 244, 252, 0.7);
+  --recent-row-hover-border: rgba(100, 149, 199, 0.4);
+  --recent-row-hover-shadow: 0 4px 18px rgba(120, 160, 200, 0.18);
+  --drop-overlay-bg: rgba(247, 251, 255, 0.55);
+  --drop-box-bg: rgba(255, 255, 255, 0.95);
+  --drop-box-shadow: 0 0 0 1px rgba(186, 230, 253, 0.55) inset, 0 24px 48px rgba(120, 160, 200, 0.16);
+  --doc-topbar-bg: rgba(255, 255, 255, 0.55);
+  --doc-topbar-shadow: 0 0 0 1px rgba(100, 149, 199, 0.14) inset, 0 18px 48px rgba(120, 160, 200, 0.14);
+  --toast-bg: rgba(2, 132, 199, 0.1);
+  --toast-border: rgba(2, 132, 199, 0.28);
+  --scrollbar-thumb: rgba(100, 149, 199, 0.35);
+  --scrollbar-thumb-hover: rgba(71, 133, 190, 0.5);
+  --pdf-shadow: 0 4px 6px rgba(120, 160, 200, 0.12), 0 24px 48px rgba(120, 160, 200, 0.2);
+  --pdf-outline: 1px solid rgba(186, 230, 253, 0.65);
+  --primary-btn-bg: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 50%, #0ea5e9 100%);
+  --primary-btn-color: #ffffff;
+  --primary-btn-shadow: 0 2px 12px rgba(14, 165, 233, 0.28);
+}
+
+html[data-theme="light"] .splash__glow {
+  background:
+    radial-gradient(ellipse 85% 70% at 8% 8%, rgba(186, 230, 253, 0.45), transparent 58%),
+    radial-gradient(ellipse 80% 65% at 92% 92%, rgba(224, 242, 254, 0.4), transparent 55%),
+    radial-gradient(ellipse 100% 80% at 50% 50%, rgba(247, 251, 255, 0.35), transparent 65%);
+}
+
+html[data-theme="light"] .splash--drag,
+html[data-theme="light"] .app--drag {
+  outline-color: rgba(2, 132, 199, 0.55);
+}
+
+html[data-theme="light"] .liquid-gradient-bg {
+  opacity: 0.62;
+  filter: saturate(1.05) brightness(1.12);
+}
+
+html[data-theme="light"] .doc-reading-backdrop {
+  background: rgba(237, 244, 252, 0.78);
+}
+
+html[data-theme="light"] .welcome__glow {
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(186, 230, 253, 0.55) 0%,
+    rgba(224, 242, 254, 0.28) 42%,
+    transparent 68%
+  );
+}
+
+/* ——— Отключение анимаций (настройка в приложении) ——— */
+html[data-reduce-motion="1"] *,
+html[data-reduce-motion="1"] *::before,
+html[data-reduce-motion="1"] *::after {
+  animation: none !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition: none !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  scroll-behavior: auto !important;
+}
+
+html[data-reduce-motion="1"] .liquid-gradient-bg {
+  display: none !important;
+}

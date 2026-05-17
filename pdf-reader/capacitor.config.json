@@ -1,0 +1,8 @@
+{
+  "appId": "com.pdfreader.app",
+  "appName": "ReadX",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}

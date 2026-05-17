@@ -1,0 +1,76 @@
+{
+  "name": "pdf-reader",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "electron": "electron .",
+    "electron:dev": "concurrently -k \"vite\" \"wait-on http://localhost:5173 && cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron .\"",
+    "icons": "node scripts/generate-icon.mjs",
+    "electron:pack": "npm run build && npm run icons && cross-env CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --win dir && node scripts/embed-exe-icon.mjs",
+    "electron:pack:portable": "npm run build && cross-env CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --win portable",
+    "electron:pack:zip": "npm run electron:pack && powershell -NoProfile -Command \"Compress-Archive -Path 'release/win-unpacked/*' -DestinationPath 'release/ReadX-1.0.0-win.zip' -Force\"",
+    "cap:sync": "npm run build && npx cap sync android",
+    "cap:open": "npx cap open android"
+  },
+  "dependencies": {
+    "pdfjs-dist": "4.8.69",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-pdf": "^9.2.1",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/cli": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.184.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "sharp": "^0.34.5",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.1",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "com.pdfreader.app",
+    "productName": "ReadX",
+    "icon": "build/icon.ico",
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "**/dist/assets/*.mjs"
+    ],
+    "extraResources": [
+      {
+        "from": "build/icon.png",
+        "to": "icon.png"
+      }
+    ],
+    "npmRebuild": false,
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "portable"
+      ],
+      "signAndEditExecutable": false,
+      "artifactName": "ReadX-${version}-portable.exe"
+    }
+  }
+}
